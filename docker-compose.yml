@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/server
+    working_dir: /server
+    command: node
+    tty: true
