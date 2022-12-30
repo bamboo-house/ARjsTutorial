@@ -7,5 +7,7 @@ services:
     volumes:
       - ./server:/server
     working_dir: /server
-    command: node
+    command: npm start
     tty: true
+    ports:
+      - 3000:3000
