@@ -4,36 +4,20 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
-    <!-- <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <a-entity
-          position="0 0 0"
-          scale="0.9 0.9 0.9"
-          geometry="primitive: box"
-          material="color: red"
-        ></a-entity>
-        <a-entity
-          position="0 0 0"
-          scale="1 1 1"
-          gltf-model="public/gltf/potted_plant_01_4k.gltf"
-        ></a-entity>
-        
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene> -->
 
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+    <a-scene embedded arjs='sourceType: webcam;'>
       <a-assets>
-          <a-asset-item id="tree" src="public/gltf/t_brick_floor_002_4k.gltf"></a-asset-item>
+        <a-asset-item id="scene" src="public/gltf/scene.gltf"></a-asset-item>
       </a-assets>
+
       <a-marker preset="hiro">
-          <a-entity   position="0 0 0" 
-                      rotation="0 0 0"
-                      scale="0.10 0.10 0.10"
-                      gltf-model="public/gltf/t_brick_floor_002_4k.gltf" >
-          </a-entity>
+        <a-entity 
+          gltf-model="#scene"
+          scale="0.05 0.05 0.05"
+        ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
-  </a-scene>
+    </a-scene>
+
   </body>
 </html>
